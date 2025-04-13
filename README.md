@@ -1,51 +1,119 @@
 <!---
 {
-  "depends_on": [],
+  "id": "3ee0acd9-0f99-4423-b4f3-a0ca84a16422",
+  "depends_on": ["2c7334b3-b07d-48d6-a562-79072d8e166e"],
   "author": "Stephan Bökelmann",
-  "first_used": "2025-03-17",
-  "keywords": ["learning", "exercises", "education", "practice"]
+  "first_used": "2025-04-13",
+  "keywords": ["HTML", "vim", "terminal", "basic web page", "cross-platform"]
 }
 --->
 
-# Learning Through Exercises
+# Creating a Simple HTML Page
 
-## Introduction
-Learning by doing is one of the most effective methods to acquire new knowledge and skills. Rather than passively consuming information, actively engaging in problem-solving fosters deeper understanding and long-term retention. By working through structured exercises, students can grasp complex concepts in a more intuitive and applicable way. This approach is particularly beneficial in technical fields like programming, mathematics, and engineering.
+> In this exercise you will learn how to create and edit a basic HTML page. Furthermore we will explore how to preview your page in a web browser and add common HTML structures like headings, lists, tables, and internal links.
+
+### Introduction
+
+Building a website is a basic skill that every programmer should have. It's not just about creating flashy pages—it's about communicating ideas clearly and organizing documentation in a way that can be shared, reused, and understood by others.
+
+HTML (HyperText Markup Language) has been a gamechanger ever since Tim Berners-Lee created the first HTTP server and browser in the early 1990s. It remains the backbone of the web today. With just a few lines of code, you can structure content that browsers interpret and display beautifully.
+
+The best part? You don’t need a web server or internet connection to start learning. Everything begins locally—right on your own computer. All you need is a plain text editor and a browser. In this exercise, we'll use `vim`, a powerful and efficient text editor available on all major platforms. You'll create and view your first web pages, understand how HTML elements are structured, and even connect multiple pages together.
+
+This hands-on approach will empower you to start thinking in HTML and lay the groundwork for building more complex websites and applications.
+
 
 ### Further Readings and Other Sources
-- [The Importance of Practice in Learning](https://www.sciencedirect.com/science/article/pii/S036013151300062X)
-- "The Art of Learning" by Josh Waitzkin
-- [How to Learn Effectively: 5 Key Strategies](https://www.edutopia.org/article/5-research-backed-learning-strategies)
+
+- [MDN Web Docs: HTML Introduction](https://developer.mozilla.org/en-US/docs/Web/HTML)
+
+---
 
 ## Tasks
-1. **Write a Summary**: Summarize the concept of "learning by doing" in 3-5 sentences.
-2. **Example Identification**: List three examples from your own experience where learning through exercises helped you understand a topic better.
-3. **Create an Exercise**: Design a simple exercise for a topic of your choice that someone else could use to practice.
-4. **Follow an Exercise**: Find an online tutorial that includes exercises and complete at least two of them.
-5. **Modify an Existing Exercise**: Take a basic problem from a textbook or online course and modify it to make it slightly more challenging.
-6. **Pair Learning**: Explain a concept to a partner and guide them through an exercise without giving direct answers.
-7. **Review Mistakes**: Look at an exercise you've previously completed incorrectly. Identify why the mistake happened and how to prevent it in the future.
-8. **Time Challenge**: Set a timer for 10 minutes and try to solve as many simple exercises as possible on a given topic.
-9. **Self-Assessment**: Create a checklist to evaluate your own performance in completing exercises effectively.
-10. **Reflect on Progress**: Write a short paragraph on how this structured approach to exercises has influenced your learning.
 
-<details>
-  <summary>Tip for Task 5</summary>
-  Try making small adjustments first, such as increasing the difficulty slightly or adding an extra constraint.
-</details>
+### Task 1: Creating and Viewing a Minimal HTML File
 
-## Questions
-1. What are the main benefits of learning through exercises compared to passive learning?
-2. How do exercises improve long-term retention?
-3. Can you think of a subject where learning through exercises might be less effective? Why?
-4. What role does feedback play in learning through exercises?
-5. How can self-designed exercises improve understanding?
-6. Why is it beneficial to review past mistakes in exercises?
-7. How does explaining a concept to someone else reinforce your own understanding?
-8. What strategies can you use to stay motivated when practicing with exercises?
-9. How can timed challenges contribute to learning efficiency?
-10. How do exercises help bridge the gap between theory and practical application?
+1. Open your terminal and navigate to a working directory.
+2. Launch vim to create a new file:
+   ```sh
+   vim index.html
+   ```
+3. Press `i` to enter INSERT mode and paste the following HTML content:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World</title>
+</head>
+<body>
+    Hello, World!
+</body>
+</html>
+```
+4. Press `Esc`, then type `:wq` and press `Enter` to save and quit.
+5. Open the file in your browser using the appropriate command for your OS:
+   - **Linux**:
+     ```sh
+     xdg-open index.html
+     ```
+   - **macOS**:
+     ```sh
+     open index.html
+     ```
+   - **Windows CMD or PowerShell**:
+     ```powershell
+     start index.html
+     ```
+
+### Task 2: Enhancing the Page with Structured Content
+
+1. Reopen `index.html` in vim:
+   ```sh
+   vim index.html
+   ```
+2. Add the following inside the `<body>` tag after "Hello, World!":
+   ```html
+   <h1>Main Heading</h1>
+   <h2>Subheading</h2>
+   <ul>
+       <li>First item</li>
+       <li>Second item</li>
+       <li>Third item</li>
+   </ul>
+   <table border="1">
+       <tr><th>Name</th><th>Age</th></tr>
+       <tr><td>Alice</td><td>30</td></tr>
+       <tr><td>Bob</td><td>25</td></tr>
+   </table>
+   ```
+3. Save and exit (`:wq`) and reopen in your browser using the previous command.
+
+### Task 3: Creating and Linking a Second Page
+
+1. Create a new file:
+   ```sh
+   vim second.html
+   ```
+2. Paste the following content:
+   ```html
+   <!DOCTYPE html>
+   <html>
+   <head><title>Second Page</title></head>
+   <body>
+       <h1>Welcome to the Second Page</h1>
+       <a href="index.html">Go Back to Home</a>
+   </body>
+   </html>
+   ```
+3. Save and exit.
+4. Edit `index.html` again and add this link somewhere in the `<body>`:
+   ```html
+   <p><a href="second.html">Visit the Second Page</a></p>
+   ```
+5. Save and test both files in the browser to confirm that navigation works.
+
+---
 
 ## Advice
-Practice consistently and seek out diverse exercises that challenge different aspects of a topic. Combine exercises with reflection and feedback to maximize your learning efficiency. Don't hesitate to adapt exercises to fit your own needs and ensure that you're actively engaging with the material, rather than just going through the motions.
 
+Building web pages in a text editor encourages a clear understanding of HTML structure and tag nesting. This skill is not only fundamental but also highly transferable to other contexts like Markdown, XML, or any code that relies on markup.
