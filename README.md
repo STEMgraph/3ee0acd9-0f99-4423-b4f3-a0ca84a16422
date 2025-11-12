@@ -1,6 +1,7 @@
 <!---
 {
   "id": "3ee0acd9-0f99-4423-b4f3-a0ca84a16422",
+  "teaches": "Creating a Simple HTML Page",
   "depends_on": ["2c7334b3-b07d-48d6-a562-79072d8e166e"],
   "author": "Stephan Bökelmann",
   "first_used": "2025-04-13",
